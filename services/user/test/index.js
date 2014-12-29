@@ -1,9 +1,8 @@
 var Lab = require('lab'),
-    lab = exports.lab = Lab.script(),
-    describe = lab.experiment,
-    before = lab.before,
-    after = lab.after,
-    it = lab.test,
+    describe = Lab.experiment,
+    before = Lab.before,
+    after = Lab.after,
+    it = Lab.test,
     expect = Lab.expect;
 
 var Hapi = require('hapi'),
