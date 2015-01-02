@@ -268,6 +268,7 @@ describe('getting recent authors', function () {
 describe('starring a package', function () {
   it('adds a star to a package', function (done) {
     var couch = nock(couchConfig.registryCouch)
+        .log(console.log)
         .put('/registry/_design/app/_update/star/request', 'boom')
         .twice()
         .reply(201, { ok: 'starred'})
@@ -293,6 +294,7 @@ describe('starring a package', function () {
 describe('unstarring a package', function () {
   it('removes a star from a package', function (done) {
     var couch = nock(couchConfig.registryCouch)
+        .log(console.log)
         .put('/registry/_design/app/_update/unstar/splort', 'boom')
         .reply(201, { ok: 'unstarred'});
 
