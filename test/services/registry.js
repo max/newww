@@ -269,9 +269,11 @@ describe('starring a package', function () {
   it('adds a star to a package', function (done) {
     var couch = nock(couchConfig.registryCouch)
         .log(console.log)
-        .put('/registry/_design/app/_update/star/request', 'boom')
-        .twice()
+        .put('/registry/_design/app/_update/star/request', '"boom"')
         .reply(201, { ok: 'starred'})
+
+        console.log(couch)
+
 
     server.methods.registry.star('request', 'boom', function (er, data) {
       expect(er).to.not.exist;
@@ -295,7 +297,7 @@ describe('unstarring a package', function () {
   it('removes a star from a package', function (done) {
     var couch = nock(couchConfig.registryCouch)
         .log(console.log)
-        .put('/registry/_design/app/_update/unstar/splort', 'boom')
+        .put('/registry/_design/app/_update/unstar/splort', '"boom"')
         .reply(201, { ok: 'unstarred'});
 
     server.methods.registry.unstar('splort', 'boom', function (er, data) {
