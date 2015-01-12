@@ -3,7 +3,6 @@ var TWO_WEEKS = 1000 * 60 * 60 * 24 * 14; // in milliseconds
 var async = require('async'),
     browse = require('../../services/registry/methods/getBrowseData'),
     Hapi = require('hapi'),
-    parseLanguageHeader = require('accept-language-parser').parse,
     fmt = require('util').format,
     moment = require('moment'),
     once = require('once');
